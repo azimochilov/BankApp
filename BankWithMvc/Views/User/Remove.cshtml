@@ -1,0 +1,49 @@
+﻿@using BankWithMvc.Service.DTOs;
+@model UserDto
+
+@{
+    ViewData["Title"] = "Delete page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(u => u.FirstName)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(u => u.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(u => u.LastName)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(u => u.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(u => u.Age)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(u => u.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(u => u.Phone)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(u => u.Phone)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <form asp-action="Remove"  method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" />
+        <a asp-action="Home" class="btn btn-outline-success">Back to main menu</a>
+    </form>
+
+</div>

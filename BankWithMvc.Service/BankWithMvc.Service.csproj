@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BankWithMvc.Data\BankWithMvc.Data.csproj" />
+    <ProjectReference Include="..\BankWithMvc.Domain\BankWithMvc.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,8 +4,9 @@ using Microsoft.EntityFrameworkCore;
 namespace BankWithMvc.Data.AppDbContext;
 public class BankDbContext : DbContext
 {
-    public BankDbContext(DbContextOptions<BankDbContext> options)
-        : base(options)
-    { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database=BankApp; Trusted_Connection=True;");
+    }
     public DbSet<User> Users { get; set; }
 }

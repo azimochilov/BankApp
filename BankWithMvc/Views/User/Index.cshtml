@@ -1,0 +1,30 @@
+﻿@using BankWithMvc.Service.DTOs;
+@{
+    ViewData["Title"] = "Users";
+}
+@model List<UserDto>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(u => u[0].FirstName)</th>
+            <th>@Html.DisplayNameFor(u => u[0].LastName)</th>
+            <th>@Html.DisplayNameFor(u => u[0].Phone)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(u => user.FirstName)</td>
+                <td>@Html.DisplayFor(u => user.LastName)</td>
+                <td>@Html.DisplayFor(u => user.Phone)</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-outline-primary">Update</a>
+                    <a asp-action="Remove" asp-route-id="@user.Id" class="btn btn-outline-danger">Remove</a>
+                    <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-outline-success">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
